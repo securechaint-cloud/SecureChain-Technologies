@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>[Produktname] – Digitaler Produktpass für sichere & nachhaltige Lieferketten</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="[Produktname] ist eine blockchain-basierte Plattform für digitale Produktpässe, die Cybersecurity, CRA-Compliance und Nachhaltigkeit über den gesamten Lebenszyklus abbildet.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            line-height: 1.6;
+            color: #111827;
+            background-color: #f3f4f6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: rgba(243, 244, 246, 0.96);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .nav-container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0.75rem 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        nav a {
+            opacity: 0.8;
+        }
+
+        nav a:hover {
+            opacity: 1;
+        }
+
+        .btn-primary {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            background: #111827;
+            color: #f9fafb;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: #050913;
+        }
+
+        main {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 2.5rem 1.25rem 4rem 1.25rem;
+        }
+
+        /* Hero */
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+            gap: 2.5rem;
+            align-items: center;
+            margin-top: 1rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .hero-kicker {
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-size: 0.75rem;
+            color: #6b7280;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.1rem, 3vw + 1rem, 3rem);
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 span {
+            color: #111827;
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+            color: #4b5563;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.7rem;
+            border-radius: 9999px;
+            border: 1px solid #d1d5db;
+            background-color: #f9fafb;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            align-items: center;
+        }
+
+        .btn-secondary {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            border: 1px solid #d1d5db;
+            background: transparent;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            background: #e5e7eb;
+        }
+
+        .hero-note {
+            font-size: 0.8rem;
+            color: #6b7280;
+        }
+
+        .hero-card {
+            background: #111827;
+            color: #f9fafb;
+            border-radius: 1.25rem;
+            padding: 1.5rem;
+            box-shadow: 0 18px 45px rgba(15, 23, 42, 0.35);
+            font-size: 0.9rem;
+        }
+
+        .hero-card h2 {
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-card-list {
+            list-style: none;
+            margin-top: 0.75rem;
+        }
+
+        .hero-card-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .hero-card-list span {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            opacity: 0.7;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 3rem;
+        }
+
+        section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        section p.section-intro {
+            font-size: 0.95rem;
+            color: #4b5563;
+            max-width: 680px;
+            margin-bottom: 1.5rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+            border: 1px solid #e5e7eb;
+            font-size: 0.9rem;
+        }
+
+        .card h3 {
+            font-size: 1rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #4b5563;
+        }
+
+        .tagline {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            color: #9ca3af;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Process / Steps */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .step {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            font-size: 0.9rem;
+        }
+
+        .step-number {
+            width: 1.6rem;
+            height: 1.6rem;
+            border-radius: 9999px;
+            border: 1px solid #d1d5db;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+            gap: 2rem;
+        }
+
+        ul {
+            padding-left: 1.1rem;
+        }
+
+        ul li {
+            margin-bottom: 0.3rem;
+        }
+
+        /* Contact */
+        .contact-box {
+            background: #111827;
+            color: #f9fafb;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            display: grid;
+            grid-template-columns: minmax(0, 2.5fr) minmax(0, 2fr);
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .contact-box input,
+        .contact-box textarea {
+            width: 100%;
+            padding: 0.6rem 0.7rem;
+            margin-bottom: 0.7rem;
+            border-radius: 0.5rem;
+            border: none;
+            font-size: 0.9rem;
+        }
+
+        .contact-box textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        .contact-box button {
+            width: 100%;
+        }
+
+        .contact-note {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            margin-top: 0.5rem;
+        }
+
+        footer {
+            border-top: 1px solid #e5e7eb;
+            padding: 1.25rem;
+            font-size: 0.8rem;
+            color: #6b7280;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+            .hero-card {
+                order: -1;
+            }
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            .steps {
+                grid-template-columns: 1fr;
+            }
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+            .contact-box {
+                grid-template-columns: 1fr;
+            }
+            nav ul {
+                display: none; /* sehr simple mobile Ansicht; optional ausbauen */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <div class="logo">[Produktname]</div>
+        <nav>
+            <ul>
+                <li><a href="#usp">USP</a></li>
+                <li><a href="#funktion">Funktionsweise</a></li>
+                <li><a href="#vorteile">Vorteile</a></li>
+                <li><a href="#technik">Technologie</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+        <a href="#kontakt" class="btn-primary">Demo anfragen</a>
+    </div>
+</header>
+
+<main>
+    <!-- Hero -->
+    <section class="hero" id="start">
+        <div>
+            <div class="hero-kicker">Digitaler Produktpass & CRA-Compliance</div>
+            <h1>
+                Der sichere digitale Produktpass<br>
+                für <span>vernetzte & nachhaltige Produkte</span>.
+            </h1>
+            <p class="hero-subtitle">
+                [Produktname] kombiniert Blockchain, KI und automatisierte
+                Compliance-Prüfungen, um sicherheits- und nachhaltigkeitsrelevante
+                Produktdaten über den gesamten Lebenszyklus fälschungssicher zu dokumentieren.
+            </p>
+
+            <div class="hero-badges">
+                <span class="badge">Blockchain-basiert</span>
+                <span class="badge">CRA-Unterstützung</span>
+                <span class="badge">SBOM & Security Updates</span>
+                <span class="badge">CO₂- & Lifecycle-Daten</span>
+            </div>
+
+            <div class="hero-actions">
+                <a href="#kontakt" class="btn-primary">Pilotprojekt besprechen</a>
+                <a href="#technik" class="btn-secondary">Technische Details</a>
+                <span class="hero-note">Ideal für Industrie & vernetzte Produkte</span>
+            </div>
+        </div>
+
+        <aside class="hero-card">
+            <div class="hero-tag">Kurz erklärt</div>
+            <h2>Was macht [Produktname] besonders?</h2>
+            <ul class="hero-card-list">
+                <li>
+                    <strong>✔</strong>
+                    <span>Digitale Produktpässe mit vollständiger Historie – von der Entwicklung über Updates bis zum Recycling.</span>
+                </li>
+                <li>
+                    <strong>✔</strong>
+                    <span>Fälschungssichere Nachweise dank Consortium-Blockchain für alle relevanten Stakeholder.</span>
+                </li>
+                <li>
+                    <strong>✔</strong>
+                    <span>Automatische Security- & CRA-Checks auf Basis von SBOM und Schwachstelleninformationen.</span>
+                </li>
+                <li>
+                    <strong>✔</strong>
+                    <span>Ein zentrales Portal für Hersteller, Lieferanten, Kunden und Auditoren.</span>
+                </li>
+            </ul>
+        </aside>
+    </section>
+
+    <!-- USP -->
+    <section id="usp">
+        <div class="tagline">USP</div>
+        <h2>Ihr Kern-Mehrwert mit [Produktname]</h2>
+        <p class="section-intro">
+            Der digitale Produktpass ist nicht nur ein weiteres Dokument –
+            er wird zur vertrauenswürdigen Datendrehscheibe zwischen Entwicklung,
+            Lieferkette, Kunden und Aufsichtsbehörden.
+        </p>
+
+        <div class="grid-3">
+            <div class="card">
+                <h3>1. Fälschungssichere Produkt-Historie</h3>
+                <p>
+                    Jede relevante Änderung (z.&nbsp;B. Firmware-Update, neues Zertifikat,
+                    CO₂-Datensatz) wird mit Zeitstempel auf einer permissioned Blockchain
+                    verankert. So sind Nachweise jederzeit überprüfbar.
+                </p>
+            </div>
+            <div class="card">
+                <h3>2. Automatisierte CRA- & Security-Checks</h3>
+                <p>
+                    Auf Basis von SBOM und Schwachstellen-Informationen unterstützt
+                    [Produktname] Sie bei der Erfüllung der CRA-Pflichten und
+                    reduziert manuellen Compliance-Aufwand.
+                </p>
+            </div>
+            <div class="card">
+                <h3>3. Eine Plattform für alle Stakeholder</h3>
+                <p>
+                    Lieferanten, interne Bereiche, Kunden und Auditoren greifen auf
+                    dieselbe verifizierte Datenbasis zu – mit rollenbasierten
+                    Zugriffsrechten und klar definierten Sichten.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Funktionsweise -->
+    <section id="funktion">
+        <div class="tagline">Funktionsweise</div>
+        <h2>So funktioniert der digitale Produktpass in der Praxis</h2>
+        <p class="section-intro">
+            Drei einfache Schritte vom Rohdateneingang bis zum nachweisbaren Produktpass.
+        </p>
+
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <strong>Daten erfassen</strong>
+                <span>
+                    Interne Systeme und Lieferanten liefern SBOM, Zertifikate, CO₂-,
+                    Qualitäts- und Security-Daten über APIs oder Portale.
+                </span>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <strong>Validieren & verankern</strong>
+                <span>
+                    [Produktname] prüft Format & Vollständigkeit, ergänzt Metadaten
+                    und verknüpft den Produktpass fälschungssicher mit der Blockchain.
+                </span>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <strong>Bereitstellen & nachweisen</strong>
+                <span>
+                    Stakeholder greifen über Portale oder QR-Code auf die jeweils
+                    passende Sicht zu – inklusive Audit-Trail und Compliance-Status.
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vorteile -->
+    <section id="vorteile">
+        <div class="tagline">Vorteile</div>
+        <h2>Für wen lohnt sich [Produktname] besonders?</h2>
+        <p class="section-intro">
+            Unterschiedliche Rollen, ein gemeinsames Ziel: Transparenz, Sicherheit
+            und Vertrauen entlang der gesamten Wertschöpfungskette.
+        </p>
+
+        <div class="grid-3">
+            <div class="card">
+                <h3>Produktmanagement & Entwicklung</h3>
+                <ul>
+                    <li>Schneller Überblick über Produkt- und Firmwarestände</li>
+                    <li>Nachvollziehbare Produkt-Historie für Audits</li>
+                    <li>Bessere Planung von Updates & Releases</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Cybersecurity & Compliance</h3>
+                <ul>
+                    <li>Unterstützung bei CRA-Nachweispflichten</li>
+                    <li>Transparenz über SBOM & Schwachstellen</li>
+                    <li>Reduzierter manueller Dokumentationsaufwand</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Nachhaltigkeit & Kunden</h3>
+                <ul>
+                    <li>CO₂- & Lifecycle-Daten pro Produkt</li>
+                    <li>Transparente Informationen für Kunden & Partner</li>
+                    <li>Mehr Vertrauen in vernetzte Produkte</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologie -->
+    <section id="technik">
+        <div class="tagline">Technologie</div>
+        <h2>Was steckt technisch hinter [Produktname]?</h2>
+
+        <div class="two-col">
+            <div>
+                <p class="section-intro">
+                    [Produktname] setzt auf eine moderne, skalierbare Architektur,
+                    die sich in bestehende IT-Landschaften integrieren lässt.
+                </p>
+                <ul>
+                    <li><strong>Consortium-Blockchain</strong> für Integrität & Nachweisbarkeit</li>
+                    <li><strong>Off-Chain Datenspeicher</strong> für detaillierte Produktpass-Daten</li>
+                    <li><strong>APIs & Webportale</strong> für ERP, PLM, Lieferanten & Kunden</li>
+                    <li><strong>Rollenbasierte Zugriffe</strong> (z. B. intern, Lieferant, Auditor)</li>
+                    <li><strong>Optionale KI-Module</strong> für Datenqualität & Anomalieerkennung</li>
+                </ul>
+            </div>
+            <div>
+                <div class="card">
+                    <h3>Typische Komponenten</h3>
+                    <ul>
+                        <li>Backend-Services (z. B. in der Cloud oder On-Prem)</li>
+                        <li>Webportale für interne Nutzer, Lieferanten, Kunden</li>
+                        <li>QR-/Code-Integration für physischen Produktzugriff</li>
+                        <li>Event-getriebene Anbindung an bestehende Systeme</li>
+                    </ul>
+                    <p style="margin-top:0.75rem; font-size:0.85rem; color:#6b7280;">
+                        Architektur und Tech-Stack können an Ihre vorhandene
+                        Infrastruktur angepasst werden (z. B. bevorzugte Cloud,
+                        Blockchain-Framework, Programmiersprachen).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="kontakt">
+        <div class="tagline">Kontakt</div>
+        <h2>Lassen Sie uns über Ihren digitalen Produktpass sprechen</h2>
+        <p class="section-intro">
+            Sie möchten den Einsatz eines digitalen Produktpasses prüfen oder haben
+            konkrete Anforderungen? Schreiben Sie uns und wir melden uns mit
+            einem Vorschlag für ein Pilotprojekt.
+        </p>
+
+        <div class="contact-box">
+            <div>
+                <h3>Unverbindliches Gespräch anfragen</h3>
+                <p style="font-size:0.9rem; margin:0.5rem 0 1rem 0;">
+                    Hinterlassen Sie uns ein paar kurze Infos. Wir melden uns
+                    innerhalb weniger Werktage mit Terminvorschlägen.
+                </p>
+                <form>
+                    <input type="text" name="name" placeholder="Ihr Name" required>
+                    <input type="email" name="email" placeholder="Ihre geschäftliche E-Mail" required>
+                    <input type="text" name="company" placeholder="Unternehmen / Organisation">
+                    <textarea name="message" placeholder="Kurze Beschreibung Ihres Use Cases"></textarea>
+                    <button type="submit" class="btn-primary">Anfrage senden</button>
+                    <div class="contact-note">
+                        Dieses Formular ist ein Platzhalter. Die technische
+                        Anbindung (E-Mail, Backend, CRM) kann später ergänzt werden.
+                    </div>
+                </form>
+            </div>
+            <div>
+                <h3>Direkte Kontaktinfos</h3>
+                <p style="font-size:0.9rem;">
+                    <strong>E-Mail:</strong> kontakt@[produktname].de<br>
+                    <strong>Telefon:</strong> +49 (0) XXX / XXXXXXX<br>
+                    <strong>Standort:</strong> [Ort, Land]
+                </p>
+                <p class="contact-note">
+                    Ergänzen Sie hier reale Kontaktdaten, rechtliche Hinweise
+                    (Impressum, Datenschutz) und ggf. Links zu weiteren Ressourcen
+                    wie Whitepaper oder Demos.
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    © <span id="year"></span> [Produktname] · Digitaler Produktpass · Impressum · Datenschutz
+</footer>
+
+<script>
+    // aktuelles Jahr automatisch setzen
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
